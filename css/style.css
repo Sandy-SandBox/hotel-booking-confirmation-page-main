@@ -1,0 +1,389 @@
+/* 
+*************************
+- CSS Variables
+*************************
+*/
+
+:root {
+  /* Font */
+
+  --ff-fraunces: "Fraunces", serif;
+  --ff-dm-sans: "DM Sans", sans-serif;
+  --ff-dm-mono: "DM Mono", monospace;
+
+  --fs-900: 2.5rem;
+  --fs-800: 2rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1.25rem;
+  --fs-500: 1rem;
+  --fs-400: 0.875rem;
+  --fs-300: 0.75rem;
+  --fs-200: 0.625rem;
+
+  --fw-600: 600;
+  --fw-500: 500;
+  --fw-400: 400;
+
+  /* Spacing */
+  --base-size: 0.25rem;
+  --space-1: calc(var(--base-size) * 1);
+  --space-2: calc(var(--base-size) * 2);
+  --space-3: calc(var(--base-size) * 3);
+  --space-4: calc(var(--base-size) * 4);
+  --space-5: calc(var(--base-size) * 5);
+  --space-6: calc(var(--base-size) * 6);
+  --space-7: calc(var(--base-size) * 7);
+  --space-8: calc(var(--base-size) * 8);
+  --space-9: calc(var(--base-size) * 9);
+  --space-10: calc(var(--base-size) * 10);
+  --space-11: calc(var(--base-size) * 11);
+  --space-12: calc(var(--base-size) * 12);
+  --space-13: calc(var(--base-size) * 13);
+  --space-14: calc(var(--base-size) * 14);
+  --space-15: calc(var(--base-size) * 15);
+
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-default: 1.5;
+
+  /* Colors */
+  --clr-neutral-900: hsl(33, 15%, 15%);
+  --clr-neutral-800: hsl(33, 22%, 20%);
+  --clr-neutral-700: hsl(32, 20%, 29%);
+  --clr-neutral-600: hsl(33, 17%, 41%);
+  --clr-neutral-400: hsl(36, 22%, 86%);
+  --clr-neutral-200: hsl(30, 24%, 93%);
+  --clr-neutral-100: hsl(35, 60%, 96%);
+  --clr-neutral-50: hsl(40, 60%, 98%);
+  --clr-neutral-0: hsl(0, 0%, 100%);
+
+  --clr-sun-500: hsl(42, 83%, 58%);
+  --clr-sun-300: hsl(44, 84%, 75%);
+  --clr-sun-200: hsl(45, 100%, 74%);
+  --clr-sun-50: hsl(41, 100%, 93%);
+
+  --clr-terracotta-700: hsl(15, 69%, 37%);
+  --clr-terracotta-600: hsl(15, 74%, 41%);
+  --clr-terracotta-500: hsl(18, 62%, 47%);
+  --clr-terracotta-400: hsl(22, 72%, 56%);
+
+  --clr-blue-500: hsl(230, 49%, 56%);
+  --clr-rose-500: hsl(340, 48%, 52%);
+
+  --clr-black-900: hsl(0, 0%, 20%);
+  --clr-black-800: hsl(0, 0%, 25%);
+  --clr-black-700: hsl(0, 0%, 30%);
+  --clr-black-600: hsl(0, 0%, 40%);
+}
+
+/* 
+*************************
+- Global Reset
+*************************
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  font-family: var(--ff-dm-sans);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  line-height: var(--lh-default);
+  background-color: var(--clr-neutral-100);
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: var(--lh-tight);
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+a:is(:link, :visited) {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* 
+*************************
+- Reusable Classes
+*************************
+*/
+
+.wrapper {
+  width: min(calc(100% - var(--space-8)), 90rem);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+.flex-items-center {
+  align-items: center;
+}
+.flex-justify-between {
+  justify-content: space-between;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+*************************
+- Sidebar & Nav
+*************************
+*/
+
+#nav-toggle,
+.header__menu-icon--close {
+  display: none;
+}
+
+.main:has(#nav-toggle:checked) .header__menu-icon--close {
+  display: block;
+}
+.main:has(#nav-toggle:checked) .header__menu-icon--open {
+  display: none;
+}
+
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+}
+
+.sidebar {
+  width: 80vw;
+  height: calc(100vh - 5rem);
+  background-color: var(--clr-neutral-100);
+  padding-inline: var(--space-8);
+  position: absolute;
+  transform: translateX(-100%);
+  top: 5rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  z-index: 999;
+  isolation: isolate;
+  transition: transform 300ms ease-out 150ms;
+}
+
+.main:has(#nav-toggle:checked) .sidebar {
+  transform: translateX(0);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: hsl(33 15% 15 / 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 300ms ease-out;
+}
+
+body:has(#nav-toggle:checked)::before {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.sidebar__content {
+  padding-block: var(--space-4);
+  border-bottom: 2px dashed var(--clr-neutral-400);
+  border-top: 2px solid var(--clr-neutral-400);
+  display: grid;
+  grid-auto-rows: 1fr auto;
+}
+
+.header {
+  background-color: var(--clr-neutral-100);
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px dotted var(--clr-neutral-400);
+}
+
+.nav__list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.nav__link:is(:link, :visited) {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  color: var(--clr-terracotta-700);
+  font-weight: var(--fw-500);
+}
+
+.nav__link--active {
+  background-color: var(--clr-neutral-0);
+  color: var(--clr-black-900);
+  border-radius: 0.375rem;
+}
+
+.nav__link-noti {
+  margin-inline-start: auto;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-terracotta-700);
+  color: var(--clr-neutral-100);
+  border-radius: 50%;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-500);
+}
+
+.weather {
+  background-color: var(--clr-sun-300);
+  padding: var(--space-4);
+  border-radius: 1rem;
+  position: relative;
+  overflow: clip;
+  color: var(--clr-neutral-700);
+  box-shadow: 5px 10px 20px hsl(33 15% 15% / 0.1);
+  /* margin-block-start: auto; */
+}
+.weather__icon {
+  position: absolute;
+  top: -25%;
+  right: 0;
+}
+.weather__location {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-500);
+  margin-block-end: var(--space-3);
+}
+
+.weather__temp {
+  font-family: var(--ff-fraunces);
+  font-size: var(--fs-800);
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-600);
+  margin-block-end: var(--space-1);
+}
+
+.weather__temp sup {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.weather__weather {
+  font-size: var(--fs-200);
+}
+
+.footer {
+  font-size: var(--fs-200);
+  color: var(--clr-neutral-600);
+  padding-block: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.footer span {
+  display: block;
+  line-height: 2.5;
+}
+
+@media (min-width: 60em) {
+  .main {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    grid-template-rows: 5rem 1fr;
+    grid-template-areas:
+      "header hero hero"
+      "sidebar hero hero";
+  }
+
+  .header {
+    grid-area: header;
+    border: none;
+  }
+  .hero {
+    grid-area: hero;
+    border-left: 1px solid var(--clr-neutral-400);
+  }
+  .sidebar {
+    width: auto;
+    height: auto;
+    position: static;
+    transform: translateX(0);
+    grid-area: sidebar;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .header__menu {
+    display: none;
+  }
+}
