@@ -123,18 +123,116 @@
         </div>
 
         <footer class="footer">
-          <span>EST. 1987</span>
-          <span>Maison Soleil · 12 Rue des Oliviers · Cassis</span>
-          <span>&copy; 2026 Maison Soleil</span>
+          <span class="tag">EST. 1987</span>
+          <span class="tag">Maison Soleil · 12 Rue des Oliviers · Cassis</span>
+          <span class="tag">&copy; 2026 Maison Soleil</span>
         </footer>
       </aside>
 
       <section class="hero">
         <div class="wrapper">
-          <a href="#">I am hero</a>
+          <header
+            class="hero__header | flex flex-items-center flex-justify-between flex-wrap gap-6"
+          >
+            <div>
+              <span class="hero__header-text tag"> Booking . confirmed </span>
+              <h1 class="hero__header-heading heading-primary">
+                Bienvenue, <span>Lucia.</span>
+              </h1>
+            </div>
+
+            <div class="flex-center flex-wrap gap-4">
+              <button class="btn btn--outline">Print receipt</button>
+              <button class="btn btn--fill">Add to calendar</button>
+            </div>
+          </header>
+
+          <div class="hero__cards flex-center flex-column">
+            <div class="hero__cards-wrapper | flex flex-column">
+              <div class="card card--welcome">
+                <p class="tag card__welcome">Welcome card</p>
+                <p class="card__note">A note from your host,</p>
+                <h2 class="card__name heading-primary">Margaux.</h2>
+                <p class="card__message">
+                  We're so glad you're coming. The shutters will be open, the
+                  lemonade cold, and the cat - Poivre - pretending not to notice
+                  you.
+                </p>
+
+                <span class="tag">Room</span>
+                <p class="card__room heading-quaternary">La Garrigue</p>
+              </div>
+              <div class="card card--receipt">
+                <div class="flex flex-items-center flex-justify-between">
+                  <div>
+                    <span class="tag">Receipt</span>
+                    <p class="card__your-stay heading-quaternary">Your stay</p>
+                  </div>
+                  <div>
+                    <span class="tag">MS-2026</span>
+                    <span class="tag">0421-AH</span>
+                  </div>
+                </div>
+
+                <div
+                  class="card__dates | flex flex-items-center flex-justify-between"
+                >
+                  <div>
+                    <span class="tag">Check in</span>
+                    <h3 class="card__date heading-tertiary">25 Apr</h3>
+                    <span class="card__time">Saturday · 15:00</span>
+                  </div>
+                  <div>
+                    <span class="tag">Check out</span>
+                    <h3 class="card__date heading-tertiary">29 Apr</h3>
+                    <span class="card__time">Wednesday · 11:00</span>
+                  </div>
+                </div>
+
+                <ul class="card__services | flex flex-column gap-1" role="list">
+                  <li class="card__service">
+                    <span class="card__text">
+                      Room · La Garrigue &times; 4 nights</span
+                    >
+                    <span class="card__price">€ 620.00</span>
+                  </li>
+                  <li class="card__service">
+                    <span class="card__text"> Breakfast &times; 2 guests</span>
+                    <span class="card__price">€ 96.00</span>
+                  </li>
+                  <li class="card__service">
+                    <span class="card__text"> Tourist tax</span>
+                    <span class="card__price">€ 14.00</span>
+                  </li>
+                </ul>
+
+                <div class="card__details | flex flex-column gap-4">
+                  <div class="flex flex-items-center flex-justify-between">
+                    <span class="tag">Total paid</span>
+                    <p class="card__total heading-quaternary">€ 730.40</p>
+                  </div>
+                  <div class="flex flex-items-center flex-justify-between">
+                    <span class="tag">Paid · Wise · GBP</span>
+                    <img
+                      src="./assets/images/icon-barcode.svg"
+                      alt="barcode icon"
+                      class="card__barcode"
+                    />
+                  </div>
+                </div>
+              </div>
+              <img
+                src="./assets/images/illustration-sun.svg"
+                alt="sun icon"
+                class="hero__sun-img"
+              />
+            </div>
+            <span class="tag hero__cards-instruction">Hover to fan</span>
+          </div>
         </div>
       </section>
     </main>
+
     <!-- <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
