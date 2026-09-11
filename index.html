@@ -23,7 +23,6 @@
   </head>
   <body>
     <main class="main">
-      <!-- Sidebar -->
       <!-- Header -->
       <header class="header | flex-center">
         <div class="wrapper | flex flex-justify-between flex-items-center">
@@ -32,7 +31,7 @@
           </a>
 
           <label
-            class="header__menu"
+            class="header__menu | flex-center"
             for="nav-toggle"
             aria-controls="primary-navigation"
           >
@@ -49,11 +48,12 @@
           </label>
         </div>
       </header>
+      <!-- Sidebar -->
       <aside class="sidebar">
         <!-- Used for navigation toggling -->
         <input type="checkbox" id="nav-toggle" />
-        <!-- Navigation -->
         <div class="sidebar__content">
+          <!-- Navigation -->
           <nav class="nav">
             <ul class="nav__list" role="list">
               <li class="nav__item">
@@ -110,6 +110,7 @@
               </li>
             </ul>
           </nav>
+          <!-- Weather -->
           <div class="weather">
             <p class="weather__location">Today in cassis</p>
             <p class="weather__temp">27<sup>&deg;</sup></p>
@@ -121,7 +122,7 @@
             />
           </div>
         </div>
-
+        <!-- Sidebar Footer -->
         <footer class="footer">
           <span class="tag">EST. 1987</span>
           <span class="tag">Maison Soleil · 12 Rue des Oliviers · Cassis</span>
@@ -129,8 +130,10 @@
         </footer>
       </aside>
 
+      <!-- Hero -->
       <section class="hero">
         <div class="wrapper">
+          <!-- Hero Header -->
           <header
             class="hero__header | flex flex-items-center flex-justify-between flex-wrap gap-6"
           >
@@ -147,8 +150,10 @@
             </div>
           </header>
 
+          <!-- Hero Cards -->
           <div class="hero__cards flex-center flex-column">
             <div class="hero__cards-wrapper | flex flex-column">
+              <!-- Welcome Card -->
               <div class="card card--welcome">
                 <p class="tag card__welcome">Welcome card</p>
                 <p class="card__note">A note from your host,</p>
@@ -162,6 +167,7 @@
                 <span class="tag">Room</span>
                 <p class="card__room heading-quaternary">La Garrigue</p>
               </div>
+              <!-- Receipt Card -->
               <div class="card card--receipt">
                 <div class="flex flex-items-center flex-justify-between">
                   <div>
@@ -228,6 +234,79 @@
               />
             </div>
             <span class="tag hero__cards-instruction">Hover to fan</span>
+          </div>
+
+          <!-- Steps -->
+          <div class="steps | flex-center gap-6">
+            <!-- Arrival -->
+            <article class="step step--arrival">
+              <div
+                class="step__header | flex flex-items-center gap-2"
+                data-number="01"
+              >
+                <div class="step__icon | flex-center">
+                  <img src="./assets/images/icon-key.svg" alt="key icon" />
+                </div>
+                <p class="step__name">Arrival</p>
+              </div>
+              <h3 class="heading-tertiary step__title">Check-in from 15:00</h3>
+              <span class="step__info">Sat, 25 April</span>
+
+              <p class="step__description">
+                Ring the brass bell by the blue door. If we're at the market,
+                the key is in the terracotta pot by the olive tree.
+              </p>
+            </article>
+            <!-- WiFi -->
+            <article class="step step--wifi">
+              <div
+                class="step__header | flex flex-items-center gap-2"
+                data-number="02"
+              >
+                <div class="step__icon | flex-center">
+                  <img src="./assets/images/icon-wifi.svg" alt="key icon" />
+                </div>
+                <p class="step__name">WIFI</p>
+              </div>
+              <h3 class="heading-tertiary step__title">Le Soleil · Guest</h3>
+              <span class="step__info">Password below</span>
+
+              <div class="step__details | flex flex-column gap-2">
+                <p
+                  class="step__detail | flex flex-items-center flex-justify-between"
+                >
+                  <span class="step__detail-key">Network</span>
+                  <span class="step__detail-value">Le Soleil · Guest</span>
+                </p>
+                <p class="step__detail | flex flex-items-center">
+                  <span class="step__detail-key">Password</span>
+                  <span class="step__detail-value">soleil-2026</span>
+                  <button class="step__btn">Copy</button>
+                </p>
+              </div>
+            </article>
+            <!-- Breakfast -->
+            <article class="step step--breakfast">
+              <div
+                class="step__header | flex flex-items-center gap-3"
+                data-number="03"
+              >
+                <div class="step__icon | flex-center">
+                  <img
+                    src="./assets/images/icon-breakfast.svg"
+                    alt="breakfast icon"
+                  />
+                </div>
+                <p class="step__name">Breakfast</p>
+              </div>
+              <h3 class="heading-tertiary step__title">Served 8 – 10:30</h3>
+              <span class="step__info">On the terrace</span>
+
+              <p class="step__description">
+                Fresh figs, Marseille honey, pain au levain, and espresso.
+                Gluten-free option? Leave a note the night before.
+              </p>
+            </article>
           </div>
         </div>
       </section>
