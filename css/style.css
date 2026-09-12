@@ -649,7 +649,7 @@ body:has(#nav-toggle:checked) {
 .step {
   padding: var(--space-6);
   border-radius: var(--br-xl);
-  background-color: var(--clr-neutral-0);
+  background-color: var(--clr-neutral-50);
   border: 1px solid var(--clr-neutral-400);
   box-shadow: 0 10px 20px hsl(33 15% 15 / 0.09);
 }
