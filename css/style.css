@@ -311,7 +311,7 @@ textarea:not([rows]) {
 }
 
 .sidebar {
-  min-height: calc(100dvh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   background-color: var(--clr-neutral-100);
   padding-inline: var(--space-6);
   position: fixed;
@@ -322,6 +322,7 @@ textarea:not([rows]) {
   z-index: 999;
   isolation: isolate;
   transition: transform 300ms ease-out 150ms;
+  overflow-y: auto !important;
 }
 
 .main:has(#nav-toggle:checked) .sidebar {
@@ -583,6 +584,7 @@ body:has(#nav-toggle:checked) {
   border-top: 2px dashed var(--clr-neutral-200);
   border-bottom: 2px dashed var(--clr-neutral-200);
   text-align: center;
+  gap: var(--space-13);
 }
 
 .card__dates .tag {
@@ -804,13 +806,20 @@ body:has(#nav-toggle:checked) {
   .header {
     grid-area: header;
     border: none;
+    position: sticky;
+    top: 0;
   }
   .hero {
     grid-area: hero;
     border-left: 1px solid var(--clr-neutral-400);
   }
+
+  /* Keeps the sidebar fixed and prevents it from being scrolled down */
   .sidebar {
-    position: static;
+    position: sticky;
+    top: var(--header-height);
+    align-self: start;
+    min-height: calc(100dvh - var(--header-height));
     transform: translateX(0);
     grid-area: sidebar;
   }
